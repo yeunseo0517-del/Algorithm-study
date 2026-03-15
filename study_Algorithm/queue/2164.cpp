@@ -16,4 +16,16 @@ int main(void) {
 	{
 		q.push(i);
 	}
+
+	while (!q.empty() && q.size() > 1)
+	{
+		q.pop();
+		q.push(q.front());
+		if (q.size() == 1)
+			break;
+		else
+			q.pop();
+	}
+
+	cout << q.front();
 }
